@@ -37,7 +37,7 @@ Install [Vagrant](https://www.vagrantup.com/downloads.html), [Virtualbox](https:
 
 ```bash
 # Download the code
-$ git clone https://github.com/teacheraio/DevSecOps-Studio.git && DevSecOps-Studio
+$ git clone https://github.com/teacheraio/DevSecOps-Studio.git && cd DevSecOps-Studio
 
 # Download the ansible dependency roles
 $ ansible-galaxy install -r requirements.yml
