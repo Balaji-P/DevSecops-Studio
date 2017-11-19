@@ -40,7 +40,7 @@ Install [Vagrant](https://www.vagrantup.com/downloads.html), [Virtualbox](https:
 $ git clone https://github.com/teacheraio/DevSecOps-Studio.git && cd DevSecOps-Studio
 
 # Download the ansible dependency roles
-$ ansible-galaxy install -r requirements.yml
+$ ansible-galaxy install -r requirements.yml -p provisioning/roles
 
 # Setup the environment, takes an hour or less based on your internet speed.
 $ vagrant up
