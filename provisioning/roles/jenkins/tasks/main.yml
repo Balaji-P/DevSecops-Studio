@@ -5,8 +5,13 @@
     url: https://pkg.jenkins.io/debian/jenkins-ci.org.key
     state: present
 
-- name: Set Jenkins binary
-  shell: sh -c 'echo deb https://pkg.jenkins.io/debian-stable binary/ > /etc/apt/sources.list.d/jenkins.list'
+- name: Add Jenkins repo to sources.list
+  copy:
+    src: jenkins.apt.list
+    dest: /etc/apt/sources.list.d/jenkins.list
+    owner: root
+    group: root
+    mode: u=rw,g=r,o=r
 
 - name: Update apt
   apt:
