@@ -1,16 +1,13 @@
 ---
 
-- name: Install awscli
+- name: Install awscli, awsebcli, ansible, ansible-lint
   pip:
-    name: awscli
-
-- name: Install awsebcli
-  pip:
-    name: awsebcli
-
-- name: Install Ansible
-  pip:
-    name: ansible
+    name: "{{ item }}"
+  with_items:
+    - awscli
+    - awsebcli
+    - ansible
+    - ansible-lint
 
 - name: Add vagrant user to Docker group
   user:

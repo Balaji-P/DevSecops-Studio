@@ -1,0 +1,27 @@
+sudo: required
+
+language: python
+
+env:
+  - PLAYBOOK=devsecops-box
+  - PLAYBOOK=jenkins
+  - PLAYBOOK=gitlab
+  - PLAYBOOK=gitlab-runner
+  - PLAYBOOK=elk
+
+services:
+  - docker
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::="--force-confold" --force-yes -y docker-engine
+  - ssh-keygen -f id_rsa -t rsa -b 4096 -C "your_email@example.com" -N ''
+
+install:
+  - pip install ansible==2.2.1.0
+  - pip install ansible-lint
+  - pip install docker
+  - pip install molecule==1.25.0
+
+script:
+  - ansible-lint provisioning/$PLAYBOOK.yml
