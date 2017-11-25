@@ -9,11 +9,11 @@ before_cache:
   - rm -f $HOME/.cache/pip/log/debug.log
 
 env:
-  - PLAYBOOK=devsecops-box
-  - PLAYBOOK=jenkins
-  - PLAYBOOK=gitlab
-  - PLAYBOOK=gitlab-runner
-  - PLAYBOOK=elk
+  - test=devsecops
+  - test=jenkins
+  - test=gitlab
+  - test=gitlab-runner
+  - test=elk
 
 services:
   - docker
@@ -24,10 +24,8 @@ before_install:
   - ssh-keygen -f id_rsa -t rsa -b 4096 -C "your_email@example.com" -N ''
 
 install:
-  - pip install ansible==2.2.1.0
-  - pip install ansible-lint
-  - pip install docker
-  - pip install molecule==1.25.0
+  - pip install docker-py
+  - pip install molecule==2.40.0
 
 script:
-  - ansible-lint provisioning/$PLAYBOOK.yml
+  - cd provisioning && molecule $DEBUG test -s $test
