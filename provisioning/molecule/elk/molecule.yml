@@ -1,0 +1,32 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: False
+  options:
+    config-file: resources/.yamllint
+platforms:
+  - name: instance
+    image: ubuntu:latest
+provisioner:
+  name: ansible
+  playbooks:
+    create: create.yml
+    destroy: destroy.yml
+  env:
+    ANSIBLE_ROLES_PATH: ../../roles/
+  lint:
+    name: ansible-lint
+    enabled: True
+    options:
+      excludes:
+        - roles/geerlingguy.nginx/tasks/
+scenario:
+  name: elk
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

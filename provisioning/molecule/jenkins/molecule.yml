@@ -1,0 +1,33 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: False
+  options:
+    config-file: resources/.yamllint
+platforms:
+  - name: instance
+    image: ubuntu:latest
+    hostname: "jenkins.local"
+provisioner:
+  name: ansible
+  playbooks:
+    create: create.yml
+    destroy: destroy.yml
+  env:
+    ANSIBLE_ROLES_PATH: ../../roles/
+  lint:
+    name: ansible-lint
+    enabled: True
+    options:
+      excludes:
+        - roles/rvm_io.ruby/tasks/rvm.yml
+scenario:
+  name: jenkins
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
