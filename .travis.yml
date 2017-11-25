@@ -25,7 +25,7 @@ before_install:
 
 install:
   - pip install docker-py
-  - pip install molecule==2.40.0
+  - pip install molecule==2.4.0
 
 script:
   - cd provisioning && molecule $DEBUG test -s $test
