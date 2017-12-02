@@ -1,10 +1,12 @@
 ---
+
 - name: List configured runners
   command: gitlab-runner list
   register: configured_runners
   changed_when: false
+  when: (gitlab_runner_connect_enable == true)
 
-- name: Upload gitlab runner regiter script to /tmp
+- name: Upload gitlab runner register script to /tmp
   copy:
     src: gitlab-register.sh
     dest: /tmp/gitlab-register.sh
@@ -15,3 +17,4 @@
 
 - name: Register gitlab runner
   command: bash /tmp/gitlab-register.sh
+  when: (gitlab_runner_connect_enable == true)
