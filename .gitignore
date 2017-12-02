@@ -3,3 +3,8 @@
 *.log
 .vagrant
 env
+*.pyc
+__pycache__
+.molecule
+.cache
+*.swp

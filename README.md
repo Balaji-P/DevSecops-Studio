@@ -1,6 +1,8 @@
 Welcome to DevSecOps Studio Project!
 ===================
 
+[![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
+
 DevSecOps Studio is a virtual environment to learn and teach DevSecOps concepts. Its easy to get started and is mostly automatic.
 
 It takes lots of efforts to setup a DevSecOps environment for training/demos and more often, its error prone when done manually.

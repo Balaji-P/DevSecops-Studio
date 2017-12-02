@@ -9,6 +9,7 @@
     oracle_java_version: 8
 
   roles:
+    - common
     - java
     - jenkins
     - python

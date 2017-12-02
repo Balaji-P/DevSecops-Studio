@@ -5,6 +5,8 @@
   become: true
   become_user: root
   remote_user: vagrant
+  vars:
+    gitlab_runner_registration_token: 'D2KpngXPzmxBgovo4DUJ'
   roles:
     - gitlab-runner
   tags:

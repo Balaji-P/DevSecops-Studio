@@ -13,13 +13,15 @@
     group: root
     mode: u=rw,g=r,o=r
 
-- name: Update apt
+- name: Install apt-transport-https
   apt:
-    update_cache=yes
+    name: apt-transport-https
+    state: present
+    update_cache: yes
 
 - name: Install Jenkins
   apt:
-    name=jenkins
-    state=present
+    name: jenkins
+    state: present
   notify:
     - Restart Jenkins

@@ -3,9 +3,11 @@
 - name: Install Docker, Docker Compose, Ansible, Packer and Terraform
   hosts: all
   become: true
+  become_user: root 
   remote_user: vagrant
 
   vars:
+    ansible_user: 'vagrant'
     # Docker Community Edition
     docker_edition: 'ce'
     docker_package: "docker-{{ docker_edition }}"
@@ -30,10 +32,13 @@
     terraform_bin_path: /usr/local/bin
 
     # Inspec
-    rvm1_rubies: ['ruby-2.3.1']
-    rvm1_user: 'vagrant'
+    ruby_version: 'ruby-2.3.1'
+    rvm1_rubies: ['{{ ruby_version }}']
+    rvm1_user: 'root'
+    rvm1_install_path: '/usr/local/rvm'
 
   roles:
+    - common
     - geerlingguy.pip
     - geerlingguy.docker
     - geerlingguy.ansible-role-packer

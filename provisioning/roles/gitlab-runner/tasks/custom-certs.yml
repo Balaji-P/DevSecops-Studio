@@ -1,4 +1,5 @@
 ---
+
 - name: Ensure local certs directory exists
   file:
     path: "/usr/local/share/ca-certificates"
@@ -14,4 +15,5 @@
     mode: 0644
 
 - name: Update cert index
-  shell: /usr/sbin/update-ca-certificates
+  command: /usr/sbin/update-ca-certificates
+  when: (gitlab_runner_file.stat.exists == false)
