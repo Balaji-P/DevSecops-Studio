@@ -201,9 +201,9 @@ Utilities:| Git, Vim, curl, wget,
 
 - [ ] Provision the stack on AWS using vagrant.
 - [ ] Build Images using Packer and upload to vagrant cloud.
-- [ ] Add Ansible Testing using molecule.
+- [x] Add Ansible Testing using molecule.
 - [ ] Add Container scanning using clair.
-- [ ] Add Inspec for compliance.
+- [x] Add Inspec for compliance.
 
 ## Contribution guidelines
 
