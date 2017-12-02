@@ -63,7 +63,7 @@
 - name: Wait untils Gitlab web API is available
   uri:
     url: '{{ gitlab_runner_coordinator_url }}'
-    method: GET 
+    method: GET
     validate_certs: no
   register: result
   until: result.status != 302
