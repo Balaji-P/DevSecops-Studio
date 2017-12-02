@@ -35,13 +35,17 @@
   package: name={{ gitlab_edition }} state=installed
   when: (gitlab_file.stat.exists == false)
 
+- name: Check if Gitlab reconfigure is run already
+  stat: path=/var/opt/gitlab/bootstrapped
+  register: gitlab_installed
+
 # Start and configure GitLab. Sometimes the first run fails, but after that,
 # restarts fix problems, so ignore failures on this run.
 - name: Reconfigure GitLab (first run).
-  command: >
-    gitlab-ctl reconfigure
-    creates=/var/opt/gitlab/bootstrapped
-  failed_when: false
+  command: gitlab-ctl reconfigure
+  changed_when: (gitlab_installed.stat.exists == true)
+  async: 60
+  poll: 0
 
 - name: Create GitLab SSL configuration folder.
   file:

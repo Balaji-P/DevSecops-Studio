@@ -1,0 +1,42 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker 
+lint:
+  name: yamllint
+  enabled: False 
+  options:
+    config-file: resources/.yamllint
+platforms:
+  - name: instance
+    image: geerlingguy/docker-ubuntu1604-ansible:latest
+    hostname: "gitlab.local"
+    privileged: True
+    command: "/lib/systemd/systemd"
+    tty: "yes"
+    volumes: 
+        - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    env:
+        TERM: xterm 
+provisioner:
+  name: ansible
+  options:
+    vvv: True
+  playbooks:
+    create: create.yml
+    destroy: destroy.yml
+  env:
+    ANSIBLE_ROLES_PATH: ../../roles/
+  lint:
+    name: ansible-lint
+    enabled: True
+    options:
+      excludes:
+        - roles/rvm_io.ruby/tasks/rvm.yml
+scenario:
+  name: gitlab 
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

@@ -1,7 +1,6 @@
 ---
 
-- name: Install Docker, Docker Compose, Ansible, Packer and Terraform
-  hosts: all
+- hosts: all
   become: true
   remote_user: root
 
