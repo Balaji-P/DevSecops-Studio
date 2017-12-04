@@ -11,7 +11,7 @@ gitlab_runner_check_interval: 0
 # GitLab coordinator URL
 gitlab_runner_coordinator_url: 'https://gitlab.local/'
 
-gitlab_runner_connect_enable: true
+gitlab_runner_connect_enable: false 
 
 # Path to coordinator cert on local machine
 # Define this if you are using Self-Signed cert for gitlab

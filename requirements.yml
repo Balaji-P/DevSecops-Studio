@@ -7,5 +7,6 @@
 - src: geerlingguy.elasticsearch
 - src: geerlingguy.kibana
 - src: geerlingguy.logstash
-- src: secfigo.terraform
 - src: rvm_io.ruby
+- src: secfigo.terraform
+- src: secfigo.gauntlt

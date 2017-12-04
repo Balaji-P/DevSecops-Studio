@@ -1,14 +1,11 @@
 ---
 
-- name: Install gitlab runner
+- name: Install Gauntlt
   hosts: all
   become: true
   become_user: root
   remote_user: root
   vars:
-    gitlab_runner_registration_token: ''
-    gitlab_runner_connect_enable: false
-
     #Gauntlt needs ruby installed
     ruby_version: 'ruby-2.3.1'
     rvm1_rubies: ['{{ ruby_version }}']
@@ -16,10 +13,5 @@
     rvm1_install_path: '/usr/local/rvm'
 
   roles:
-    - common
-    - gitlab-runner
-    - rvm_io.ruby
-    - secfigo.gauntlt
-  tags:
-    - runner
-
+    - role: rvm_io.ruby
+    - role: ansible-role-gauntlt

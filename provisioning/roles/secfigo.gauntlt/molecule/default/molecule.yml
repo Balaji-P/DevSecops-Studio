@@ -1,0 +1,28 @@
+---
+dependency:
+  name: galaxy
+  options:
+    ignore-certs: True
+    ignore-errors: True
+driver:
+  name: docker
+lint:
+  name: yamllint
+  enabled: False 
+platforms:
+  - name: instance
+    image: ubuntu:16.04
+    privileged: True
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+    options:
+      excludes:
+        - ../rvm_io.ruby/tasks/rvm.yml
+scenario:
+  name: default
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

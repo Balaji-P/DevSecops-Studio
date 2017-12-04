@@ -1,0 +1,27 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: secfigo
+  description: "Gauntlt installation role for Linux"
+  company: "Teachera Community"
+  license: "license (MIT)"
+  min_ansible_version: 2.0
+  platforms:
+    - name: EL
+      versions:
+      - all
+    - name: Ubuntu
+      versions:
+      - all
+    - name: Debian
+      versions:
+      - all
+  galaxy_tags:
+    - security
+    - gauntlt
+    - DevSecOpsStudio
+    - DevSecOps
+    - ruggedDevOps
+    - system
+    - ci

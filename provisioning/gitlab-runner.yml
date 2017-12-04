@@ -7,8 +7,16 @@
   remote_user: vagrant
   vars:
     gitlab_runner_registration_token: 'D2KpngXPzmxBgovo4DUJ'
+
+    #Gauntlt needs ruby installed
+    ruby_version: 'ruby-2.3.1'
+    rvm1_rubies: ['{{ ruby_version }}']
+    rvm1_user: 'root'
+    rvm1_install_path: '/usr/local/rvm'
+
   roles:
     - gitlab-runner
+    - rvm_io.ruby
+    - secfigo.gauntlt
   tags:
     - runner
-
