@@ -58,7 +58,7 @@
 
 - name: Install Self-Signed cert on system
   include: custom-certs.yml
-  when: gitlab_runner_coordinator_cert_path != ''
+  when: gitlab_runner_connect_enable == true
 
 - name: Wait untils Gitlab web API is available
   uri:
@@ -69,7 +69,7 @@
   until: result.status != 302
   retries: 12
   delay: 5
-  when: (gitlab_runner_connect_enable == true)
+  when: gitlab_runner_connect_enable == true
 
 - name: Check whether /etc/hosts contains "10.0.1.15 gitlab.local"
   command: awk /gitlab.local$/ /etc/hosts
@@ -83,4 +83,4 @@
 
 - name: Register GitLab Runner
   include: register-runner.yml
-  when: (gitlab_runner_connect_enable == true)
+  when: gitlab_runner_connect_enable == true
