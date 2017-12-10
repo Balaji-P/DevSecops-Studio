@@ -6,7 +6,8 @@
   become_user: root
   remote_user: vagrant
   vars:
-    gitlab_runner_registration_token: 'D2KpngXPzmxBgovo4DUJ'
+    gitlab_runner_registration_token: '1DyzXnV2Jksxu67vR5R7'
+    gitlab_runner_connect_enable: false
 
     #Gauntlt needs ruby installed
     ruby_version: 'ruby-2.3.1'

@@ -7,7 +7,7 @@
   when: (gitlab_runner_connect_enable == true)
 
 - name: Upload gitlab runner register script to /tmp
-  copy:
+  template:
     src: gitlab-register.sh
     dest: /tmp/gitlab-register.sh
     owner: root
