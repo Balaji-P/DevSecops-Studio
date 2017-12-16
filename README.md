@@ -3,11 +3,19 @@ Welcome to DevSecOps Studio Project!
 
 [![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
 
-DevSecOps Studio is a virtual environment to learn and teach DevSecOps concepts. Its easy to get started and is mostly automatic.
+DevSecOps Studio is one of its kind, self contained DevSecOps environment/distribution to help individuals in learning DevSecOps concepts. It takes lots of efforts to setup the environment for training/demos and more often, its error prone when done manually. DevSecOps Studio is easy to get started, mostly automatic and battle tested during our Free Practical DevSecOps Course at https://www.teachera.io/devsecops-course/
 
-It takes lots of efforts to setup a DevSecOps environment for training/demos and more often, its error prone when done manually.
+DevSecOps Studio project aims to reduce the time to bootstrap the environment and help you in concentrating on learning/teaching DevSecOps practices with the following features.
 
-This project aims to reduce the time to bootstrap the environment
+1. Easy to setup environment with just one command “vagrant up”
+2. Teaches Security as Code, Compliance as Code, Infrastructure as Code
+3. With built-in support for CI/CD pipeline
+4. OS hardening using ansible
+5. Compliance as code using Inspec
+6. QA security using ZAP, BDD-Security and Gauntlt
+7. Static tools like bandit, brakeman, windbags, gitrob, gitsecrets
+8. Security Monitoring using ELK stack. 
+
 
 > **Note:**
 
@@ -50,6 +58,8 @@ $ vagrant up
 Go grab some coffee while DevSecOps Studio does its job.
 
 Yes, that's it, you just setup entire DevSecOps environment with three commands :)
+
+Go ahead and read Practical DevSecOps Lessons on the [wiki](https://github.com/teacheraio/DevSecOps-Studio/wiki)
 
 ### Details
 
@@ -160,16 +170,17 @@ pip install ansible
 	```bash
 	$ cd DevSecOps-Studio && vagrant status
 	```
-1. Download requirement ansible dependencies.
+2. Download requirement ansible dependencies.
     ```bash
     $ ansible-galaxy install -r requirements.yml
     ```
 
-1. Edit the machines.yml file to make any changes, if you are not sure please leave it as default. Meanwhile, go grab some coffee to enjoy :)
+3. Edit the machines.yml file to make any changes, if you are not sure please leave it as default. Meanwhile, go grab some coffee to enjoy :)
 
 	```bash
 	vagrant up
 	```
+You can see how it all fits in DevSecOps pipeline by reading out [WIKI](https://github.com/teacheraio/DevSecOps-Studio/wiki)
 
 ## How to use the setup
 
