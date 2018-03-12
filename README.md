@@ -147,13 +147,13 @@ Alternatively, Installation can be done using [chocolatey](https://chocolatey.or
 Install dependencies using choco
 
 ```bash
-choco install vagrant virtualbox git
+choco install vagrant virtualbox git -y 
 ```
 
 Install ansible via pip
 
 ```bash
-choco install python --version 2.7.6
+choco install python2 -y #Installs python 2.7.x, includes pip under scripts folder of python27
 pip install ansible
 ```
 
