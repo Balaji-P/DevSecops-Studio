@@ -6,9 +6,9 @@
     recurse: true
     state: directory
 
-- name: Copy custom certs
+- name: Copy gitlab server's public key to gitlab-runner
   copy:
-    src: "{{ gitlab_runner_coordinator_cert_path }}"
+    src: "{{gitlab_runner_coordinator_cert_path}}"
     dest: "/usr/local/share/ca-certificates/"
     owner: root
     group: root
@@ -16,4 +16,4 @@
 
 - name: Update cert index
   command: /usr/sbin/update-ca-certificates
-  when: (gitlab_runner_file.stat.exists == false)
+  when: (gitlab_runner_connect_enable == true)

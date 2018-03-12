@@ -3,7 +3,7 @@
 - name: Install Docker, Docker Compose, Ansible, Packer and Terraform
   hosts: all
   become: true
-  become_user: root 
+  become_user: root
   remote_user: vagrant
 
   vars:

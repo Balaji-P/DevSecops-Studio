@@ -84,3 +84,7 @@
 - name: Register GitLab Runner
   include: register-runner.yml
   when: gitlab_runner_connect_enable == true
+
+- name: Add gitlab-runner to docker group
+  include: docker.yml
+  when: docker_package_state == "present"

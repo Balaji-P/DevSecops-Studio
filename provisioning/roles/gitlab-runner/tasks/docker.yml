@@ -1,0 +1,7 @@
+---
+
+- name: Add gitlab-runner user to Docker group
+  user:
+    name: gitlab-runner
+    groups: docker
+    append: "yes"

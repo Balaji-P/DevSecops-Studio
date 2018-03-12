@@ -13,8 +13,8 @@
     owner: root
     group: root
     mode: 0754
-  when: configured_runners.stdout.find("{{ gitlab_runner_name }}") == -1
+  when: configured_runners.stderr.find("https://gitlab.local/") == -1
 
 - name: Register gitlab runner
   command: bash /tmp/gitlab-register.sh
-  when: (gitlab_runner_connect_enable == true)
+  when: (configured_runners.stderr.find("https://gitlab.local/") == -1 ) and (gitlab_runner_connect_enable == true)

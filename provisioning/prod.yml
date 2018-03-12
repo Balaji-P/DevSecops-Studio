@@ -1,20 +1,11 @@
 ---
 
-- name: Install gitlab runner
+- name: Setup production environment
   hosts: all
   become: true
   become_user: root
   remote_user: vagrant
   vars:
-    gitlab_runner_registration_token: '1DyzXnV2Jksxu67vR5R7'
-    gitlab_runner_connect_enable: false
-
-    #Gauntlt needs ruby installed
-    ruby_version: 'ruby-2.3.1'
-    rvm1_rubies: ['{{ ruby_version }}']
-    rvm1_user: 'root'
-    rvm1_install_path: '/usr/local/rvm'
-
     # Docker settings for runner
     docker_edition: 'ce'
     docker_package: "docker-{{ docker_edition }}"
@@ -28,17 +19,7 @@
     docker_apt_release_channel: stable
     docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
 
-    # Packer
-    packer_version: "1.1.0"
-    packer_arch: "amd64"
-    packer_bin_path: /usr/local/bin
-
-
   roles:
-    - rvm_io.ruby
-    - secfigo.gauntlt
     - geerlingguy.docker
-    - gitlab-runner
-    - geerlingguy.ansible-role-packer
   tags:
-    - runner
+    - prod
