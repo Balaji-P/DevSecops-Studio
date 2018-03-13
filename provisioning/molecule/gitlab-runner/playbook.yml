@@ -35,6 +35,7 @@
 
 
   roles:
+    - common
     - rvm_io.ruby
     - secfigo.gauntlt
     - geerlingguy.docker
