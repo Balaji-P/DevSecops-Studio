@@ -5,6 +5,7 @@
     name: "{{ item.url }}"
     dest: /home/vagrant/"{{ item.dest }}"
     version: master
+    update: no
   with_items:
     - { url : 'https://github.com/dev-sec/ansible-os-hardening.git', dest: 'ansible-os-hardening' }
     - { url : 'https://github.com/teacheraio/DevSecOps-Studio.git', dest: 'DevSecOps-Studio' }
