@@ -2,14 +2,14 @@
 
 - name: Setup the Git repo
   git:
-    name: "{{ item }}"
-    dest: /home/vagrant
+    name: "{{ item.url }}"
+    dest: /home/vagrant/"{{ item.dest }}"
     version: master
   with_items:
-    - https://github.com/dev-sec/ansible-os-hardening.git
-    - https://github.com/teacheraio/DevSecOps-Studio.git
-    - https://github.com/dev-sec/linux-baseline.git
-    - https://github.com/dev-sec/cis-docker-benchmark.git
+    - { url : 'https://github.com/dev-sec/ansible-os-hardening.git', dest: 'ansible-os-hardening' }
+    - { url : 'https://github.com/teacheraio/DevSecOps-Studio.git', dest: 'DevSecOps-Studio' }
+    - { url : 'https://github.com/dev-sec/linux-baseline.git', dest: 'linux-baseline.git' }
+    - { url : 'https://github.com/dev-sec/cis-docker-benchmark.git', dest: 'cis-docker-benchmark.git' }
 
 - name: Change owner of repos to vagrant
   file:
