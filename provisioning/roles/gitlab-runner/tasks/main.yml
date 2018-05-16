@@ -81,6 +81,16 @@
   shell: echo "10.0.1.15 gitlab.local" >> /etc/hosts
   when: not (hosts_content.stdout | match("10.0.1.15 gitlab.local"))
 
+- name: Install Security Tools
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - nmap
+    - sslyze
+    - python-pip
+    - python-virtualenv
+
 - name: Register GitLab Runner
   include: register-runner.yml
   when: gitlab_runner_connect_enable == true

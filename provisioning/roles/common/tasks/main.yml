@@ -8,6 +8,7 @@
     - curl
     - locales
     - apt-transport-https
+    - sshpass
 
 - name: Configure Locale as en_US.UTF-8
   locale_gen:
