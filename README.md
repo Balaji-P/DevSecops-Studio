@@ -112,6 +112,15 @@ brew install ansible
 ```
 
 ### Linux
+
+Install with curl(run as root)
+
+``` bash
+curl -O https://raw.githubusercontent.com/raghuone/DevSecOps-Studio/master/setup/Linux_DevSecOps_Setup.sh && chmod +x Linux_DevSecOps_Setup.sh && ./Linux_DevSecOps_Setup.sh;
+```
+
+or 
+
 Install dependencies using apt-get
 
 [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
@@ -138,6 +147,12 @@ pip install ansible
 
 ### Windows (optional)
 
+Easiest solution for windows user is to use DevSecOps Studio Virtualbox Appliance
+1. Download DevSecOps-Studio Appliance (4.45 GB) from [this link](https://drive.google.com/open?id=1b3Z6BLndohpn_2HHcBfPFUpoSx78OKgG)
+
+2. Import the above Appliance by following [these step](https://docs.oracle.com/cd/E26217_01/E26796/html/qs-import-vm.html)
+
+
 Alternatively, Installation can be done using [chocolatey](https://chocolatey.org/install) by opening up command prompt  and using the following command.
 
 ```bash
@@ -150,7 +165,9 @@ Install dependencies using choco
 choco install vagrant virtualbox git -y 
 ```
 
-Install ansible via pip
+
+Install ansible via pip  
+> Installation on windows for ansible is not straight forward, please follow [these instructions](https://www.jeffgeerling.com/blog/running-ansible-within-windows) to install cygwin and then install ansible
 
 ```bash
 choco install python2 -y #Installs python 2.7.x, includes pip under scripts folder of python27
@@ -228,4 +245,4 @@ DevSecOps Studio uses some of the ansible roles from [Jeff](https://github.com/g
 
 ## Who do I talk to?
 
-* If you have any questions regarding this repo, please contact Mohammed A. Imran @secfigo and Raghunath G @raseyon
+* If you have any questions regarding this repo, please contact Mohammed A. Imran @secfigo and Raghunath G @raghunath24
