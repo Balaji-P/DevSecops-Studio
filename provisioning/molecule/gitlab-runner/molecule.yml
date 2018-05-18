@@ -10,7 +10,7 @@ lint:
     config-file: resources/.yamllint
 platforms:
   - name: instance
-    image: ubuntu:latest
+    image: ubuntu:16.04
     hostname: "gitlab-runner.local"
 provisioner:
   name: ansible
