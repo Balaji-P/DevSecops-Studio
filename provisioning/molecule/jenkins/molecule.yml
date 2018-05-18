@@ -14,8 +14,6 @@ platforms:
     hostname: "jenkins.local"
 provisioner:
   name: ansible
-  options:
-    vvv: True
   playbooks:
     create: create.yml
     destroy: destroy.yml
@@ -27,6 +25,8 @@ provisioner:
     options:
       excludes:
         - roles/rvm_io.ruby/tasks/rvm.yml
+        - roles/geerlingguy.jenkins/tasks/main.yml
+        - roles/geerlingguy.jenkins/tasks/settings.yml
 scenario:
   name: jenkins
 verifier:

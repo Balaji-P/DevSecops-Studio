@@ -41,7 +41,7 @@
     - rvm_io.ruby
     - secfigo.gauntlt
     - geerlingguy.docker
-    - java
+    - geerlingguy.java
     - geerlingguy.jenkins
     - python
     - cli-tools
