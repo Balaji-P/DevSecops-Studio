@@ -3,7 +3,7 @@
 - name: Setup the Git repo
   git:
     name: "{{ item.url }}"
-    dest: /home/vagrant/"{{ item.dest }}"
+    dest: "/home/vagrant/{{ item.dest }}"
     version: master
     update: no
   with_items:
@@ -14,8 +14,13 @@
 
 - name: Change owner of repos to vagrant
   file:
-    dest: /home/vagrant
+    dest: "{{item.dest}}"
     owner: vagrant
     group: vagrant
     mode: 0644
     recurse: yes
+  with_items:
+    - { url : 'https://github.com/dev-sec/ansible-os-hardening.git', dest: 'ansible-os-hardening' }
+    - { url : 'https://github.com/teacheraio/DevSecOps-Studio.git', dest: 'DevSecOps-Studio' }
+    - { url : 'https://github.com/dev-sec/linux-baseline.git', dest: 'linux-baseline.git' }
+    - { url : 'https://github.com/dev-sec/cis-docker-benchmark.git', dest: 'cis-docker-benchmark.git' }
