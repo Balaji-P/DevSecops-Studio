@@ -41,5 +41,6 @@
     - geerlingguy.docker
     - gitlab-runner
     - geerlingguy.ansible-role-packer
+    - cli-tools 
   tags:
     - runner

@@ -1,0 +1,21 @@
+---
+
+- name: Install Security Tools
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items:
+    - nikto
+    - nmap
+    - sqlmap
+    - python-pip
+    - python-virtualenv
+
+- name: Install tools via pip
+  pip:
+    name: "{{ item }}"
+    version: 1.4.1
+    state: present
+  with_items:
+    - sslyze
+    - ansible
