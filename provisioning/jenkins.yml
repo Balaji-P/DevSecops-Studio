@@ -32,9 +32,31 @@
     packer_arch: "amd64"
     packer_bin_path: /usr/local/bin
 
-    #Jenkins 
+    #Jenkins
     jenkins_admin_username: vagrant
     jenkins_admin_password: vagrant
+    jenkins_plugins_install_dependencies: yes
+    jenkins_java_options: "-Djenkins.install.runSetupWizard=false"
+    jenkins_plugins:
+      - git # Installs Credentials and SSH credentials plugins
+      - sonar
+      - ant
+      - gradle
+      - cloudbees-folder
+      - ssh
+      - ws-cleanup
+      - build-timeout
+      - timestamper
+      - credentials-binding
+      - role-strategy
+      - antisamy-markup-formatter
+      - ansicolor
+      - matrix-auth
+      - workflow-aggregator
+      - extended-read-permission
+      - ssh-slaves
+      - email-ext
+      - ansible
 
   roles:
     - common # need curl for rvm_io.ruby
@@ -46,4 +68,4 @@
     - python
     - cli-tools
     - geerlingguy.ansible-role-packer
-    #- selenium
+    # - selenium
