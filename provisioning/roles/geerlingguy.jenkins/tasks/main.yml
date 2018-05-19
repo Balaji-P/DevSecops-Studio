@@ -58,3 +58,6 @@
 
 # Update Jenkins and install configured plugins.
 - include_tasks: plugins.yml
+
+# Disable setup wizard after installation
+- include_tasks: disable-wizard.yml
