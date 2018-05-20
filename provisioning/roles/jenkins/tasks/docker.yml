@@ -1,6 +1,6 @@
 ---
 
-- name: Add gitlab-runner user to Docker group
+- name: Add jenkins user to Docker group
   user:
     name: "{{ jenkins_process_user }}"
     groups: docker

@@ -1,6 +1,6 @@
 ---
 
-- name: Add gitlab-runner user to Docker group
+- name: Add vagrant user to Docker group
   user:
     name: vagrant
     groups: docker
