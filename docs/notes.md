@@ -48,3 +48,12 @@ see https://github.com/geerlingguy/ansible-role-jenkins/issues/181
     user: "{{ jenkins_admin_username }}"
     password: "{{ jenkins_admin_password }}"
 ```
+
+Gitlab
+=======
+
+- Verify the gitlab works fine locally in VM because of docker bug on Travis
+
+DevSecOps-Box
+=============
+- Don't forget to add machine's host name in hosts_entry.yml once you a add new box.
