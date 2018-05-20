@@ -11,7 +11,7 @@
     # Docker Community Edition
     docker_edition: 'ce'
     docker_package: "docker-{{ docker_edition }}"
-    docker_package_state: present
+    docker_package_state: "present"
 
     # Docker compose
     docker_install_compose: true
