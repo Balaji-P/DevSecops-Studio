@@ -54,6 +54,25 @@ Gitlab
 
 - Verify the gitlab works fine locally in VM because of docker bug on Travis
 
+- For molecule tests you need to use the following configs apart from usual provisioning/gitlab.yml
+
+```bash
+  vars:
+    gitlab_restart_handler_failed_when: false
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Remove the .dockerenv file so GitLab Omnibus doesn't get confused.
+      file:
+        path: /.dockerenv
+        state: absent
+```
+
 DevSecOps-Box
 =============
 - Don't forget to add machine's host name in hosts_entry.yml once you a add new box.
+- Ensure host entries are working fine in VM, cant test hosts entries in docker because of its nature see - https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
