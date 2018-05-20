@@ -4,7 +4,7 @@
   hosts: all
   become: true
   become_user: root
-  remote_user: vagrant
+  remote_user: root
   vars:
     # Docker settings for runner
     docker_edition: 'ce'

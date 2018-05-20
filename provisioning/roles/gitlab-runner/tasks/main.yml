@@ -57,7 +57,7 @@
   when: (gitlab_config_file.stat.exists == false)
 
 - name: Install Self-Signed cert on system
-  include: custom-certs.yml
+  include_tasks: custom-certs.yml
   when: gitlab_runner_connect_enable == true
 
 - name: Wait untils Gitlab web API is available
@@ -82,9 +82,9 @@
   when: not (hosts_content.stdout | match("10.0.1.15 gitlab.local"))
 
 - name: Register GitLab Runner
-  include: register-runner.yml
+  include_tasks: register-runner.yml
   when: gitlab_runner_connect_enable == true
 
-- name: Add gitlab-runner to docker group
+- name: Setup docker with self signed ssl
   include_tasks: docker.yml
   when: docker_package_state == present

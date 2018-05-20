@@ -30,3 +30,7 @@ gitlab_runner_tags: []
 # Directory where builds and caches will be stored in context of selected executor
 # (Locally, Docker, SSH)
 gitlab_runner_persistent_dir: "/etc/gitlab-runner"
+
+docker_registry_hostname: gitlab.local
+docker_registry_port: 4567
+docker_registry_cert_path: "/etc/docker/certs.d/{{docker_registry_hostname}}:{{docker_registry_port}}/"

@@ -1,10 +1,12 @@
 ---
 # General config.
 gitlab_external_url: "https://gitlab.local/"
+gitlab_registry_external_url: "https://gitlab.local:4567/"
 gitlab_git_data_dir: "/var/opt/gitlab/git-data"
 gitlab_edition: "gitlab-ce"
 gitlab_backup_path: "/var/opt/gitlab/backups"
 
+gitlab_registry: "true"
 gitlab_in_docker: "false"
 
 # SSL Configuration.

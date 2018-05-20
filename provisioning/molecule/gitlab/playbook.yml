@@ -8,8 +8,19 @@
 
   vars:
     gitlab_restart_handler_failed_when: false
-    gitlab_external_url: https://gitlab.local/
-    gitlab_in_docker: true
+    # gitlab_external_url: https://gitlab.local/
+    # gitlab_in_docker: true
+
+  pre_tasks:
+    - name: Update apt cache.
+      apt: update_cache=yes cache_valid_time=600
+      when: ansible_os_family == 'Debian'
+      changed_when: false
+
+    - name: Remove the .dockerenv file so GitLab Omnibus doesn't get confused.
+      file:
+        path: /.dockerenv
+        state: absent
 
   roles:
     - common

@@ -11,7 +11,7 @@
     # Docker Community Edition
     docker_edition: 'ce'
     docker_package: "docker-{{ docker_edition }}"
-    docker_package_state: present
+    docker_package_state: "present"
 
     # Docker compose
     docker_install_compose: true
@@ -36,6 +36,10 @@
     rvm1_rubies: ['{{ ruby_version }}']
     rvm1_user: 'root'
     rvm1_install_path: '/usr/local/rvm'
+
+    # host entries won't work in docker
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts 
+    add_host_entries: true
 
   roles:
     - common
