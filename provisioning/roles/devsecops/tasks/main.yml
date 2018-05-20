@@ -28,5 +28,5 @@
   import_tasks: docker.yml
   when: docker_package_state == "present"
 
-- name: Add /etc/hosts entries in DevSecOps-Box 
+- name: Add /etc/hosts entries in DevSecOps-Box
   import_tasks: hosts_entry.yml
