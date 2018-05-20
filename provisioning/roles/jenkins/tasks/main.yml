@@ -1,27 +1,5 @@
 ---
 
-- name: Add an Jenkins Apt signing key.
-  apt_key:
-    url: https://pkg.jenkins.io/debian/jenkins-ci.org.key
-    state: present
-
-- name: Add Jenkins repo to sources.list
-  copy:
-    src: jenkins.apt.list
-    dest: /etc/apt/sources.list.d/jenkins.list
-    owner: root
-    group: root
-    mode: u=rw,g=r,o=r
-
-- name: Install apt-transport-https
-  apt:
-    name: apt-transport-https
-    state: present
-    update_cache: yes
-
-- name: Install Jenkins
-  apt:
-    name: jenkins
-    state: present
-  notify:
-    - Restart Jenkins
+- name: Setup docker with self signed ssl
+  include_tasks: docker.yml
+  when: docker_package_state == present

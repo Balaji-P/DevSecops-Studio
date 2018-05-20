@@ -65,6 +65,7 @@
     - geerlingguy.docker
     - geerlingguy.java
     - geerlingguy.jenkins
+    - jenkins # Docker settings for jenkins
     - python
     - cli-tools
     - geerlingguy.ansible-role-packer

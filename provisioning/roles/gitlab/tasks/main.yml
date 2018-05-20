@@ -13,7 +13,7 @@
 
 # Install GitLab and its dependencies.
 - name: Install GitLab dependencies.
-  package: name={{ item }} state=installed
+  package: name={{ item }} state=present
   with_items:
     - openssh-server
     - postfix
@@ -32,7 +32,7 @@
   when: (gitlab_file.stat.exists == false)
 
 - name: Install GitLab
-  package: name={{ gitlab_edition }} state=installed
+  package: name={{ gitlab_edition }} state=present
   when: (gitlab_file.stat.exists == false)
 
 - name: Check if Gitlab reconfigure is run already
@@ -87,4 +87,4 @@
     owner: root
     group: root
     mode: 0600
-  # notify: restart gitlab
+  notify: restart gitlab

@@ -14,12 +14,6 @@
     name: tree
     state: present
 
-- name: Add vagrant user to Docker group
-  user:
-    name: vagrant
-    groups: docker
-    append: "yes"
-
 - name: Generate SSH key of vagrant user
   user:
     name: vagrant
@@ -29,3 +23,7 @@
 
 - name: Clone git repos of needed code
   import_tasks: git_repos.yml
+
+- name: Clone git repos of needed code
+  import_tasks: docker.yml
+  when: docker_package_state == present

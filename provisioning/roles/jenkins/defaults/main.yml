@@ -1,0 +1,4 @@
+---
+
+jenkins_process_user: jenkins
+jenkins_process_group: "{{ jenkins_process_user }}"
