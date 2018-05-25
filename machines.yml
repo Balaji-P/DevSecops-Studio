@@ -7,7 +7,7 @@
 
 - name: jenkins
   box: bento/ubuntu-16.04
-  ram: 512 
+  ram: 1024
   ip: 10.0.1.11
   ansible: "provisioning/jenkins.yml"
 
