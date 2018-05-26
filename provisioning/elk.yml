@@ -7,10 +7,9 @@
   remote_user: vagrant
   vars:
     - elasticsearch_network_host: localhost
-
     # host entries won't work in docker
-    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts 
-    add_host_entries: true
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
+    - add_host_entries: true
 
   roles:
     - common

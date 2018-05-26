@@ -1,6 +1,6 @@
 ---
 
-- name: Install Vulnerability Management 
+- name: Install Vulnerability Management
   hosts: all
   become: yes
   become_user: root
@@ -8,9 +8,9 @@
 
   vars:
     # host entries won't work in docker
-    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts 
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
     add_host_entries: true
 
   roles:
     - common
-    - dojo 
+    - dojo
