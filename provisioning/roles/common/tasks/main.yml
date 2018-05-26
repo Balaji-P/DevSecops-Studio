@@ -14,3 +14,6 @@
   locale_gen:
     name: en_US.UTF-8
     state: present
+
+- name: Add /etc/hosts entries in DevSecOps-Box
+  include_tasks: hosts_entry.yml
