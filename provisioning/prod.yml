@@ -19,6 +19,10 @@
     docker_apt_release_channel: stable
     docker_apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ docker_apt_release_channel }}"
 
+    # host entries won't work in docker
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts 
+    add_host_entries: true
+
   roles:
     - common
     - geerlingguy.docker
