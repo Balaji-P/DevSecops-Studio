@@ -38,7 +38,7 @@
     rvm1_install_path: '/usr/local/rvm'
 
     # host entries won't work in docker
-    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts 
+    # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
     add_host_entries: true
 
   roles:
