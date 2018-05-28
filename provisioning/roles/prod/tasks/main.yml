@@ -1,5 +1,9 @@
 ---
 
+- name: Create deploy user and configure it
+  include_tasks: deploy_user_setup.yml
+
 - name: Setup docker with self signed ssl
   include_tasks: docker.yml
   when: docker_package_state == present
+

@@ -1,8 +1,8 @@
 ---
 
-- name: Add vagrant user to Docker group
+- name: Add deploy user to Docker group
   user:
-    name: vagrant
+    name: "{{ deploy_user_name }}"
     groups: docker
     append: "yes"
 
