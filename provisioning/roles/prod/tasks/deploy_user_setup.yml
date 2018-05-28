@@ -1,0 +1,52 @@
+---
+
+- name: Check if deploy user ~/.ssh directory is created
+  stat: path= "{{ deploy_user_ssh_dir }}"
+  register: deploy_user_ssh_dir_stat
+
+- name: Create deploy user and add to docker group
+  user:
+    name: "{{ deploy_user_name }}"
+    shell: /bin/bash
+    groups: docker
+    append: yes
+    generate_ssh_key: yes
+    ssh_key_bits: 2048
+    ssh_key_file: .ssh/id_rsa
+  when: (deploy_user_ssh_dir_stat.stat.exists == false)
+
+#- name: Create required directory
+#  file:
+#    path: "{{ deploy_user_ssh_dir }}"
+#    state: directory
+#    owner: "{{ deploy_user_name }}"
+#    group: "{{ deploy_user_name }}"
+#    mode: 0700
+#    recurse: true
+#  when: (deploy_user_ssh_dir_stat.stat.exists == false)
+#
+#- name: Copy private and Public SSH keys
+#  copy:
+#    src: "{{ item }}"
+#    dest: "{{ deploy_user_ssh_dir }}"
+#    owner: "{{ deploy_user_name }}"
+#    group: "{{ deploy_user_name }}"
+#    mode: 0644
+#  with_items:
+#     - id_rsa
+#     - id_rsa.pub
+#  when: (deploy_user_ssh_dir_stat.stat.exists == false)
+
+- name: Check if authorized_keys file is created
+  stat: path= "{{ authorized_keys_file }}"
+  register: deploy_user_authorized_keys
+
+- name: Copy id_rsa.pub file into authorized_keys
+  copy:
+    src: "{{ deploy_user_ssh_dir }}/id_rsa.pub"
+    dest: "{{ authorized_keys_file }}"
+    owner: "{{ deploy_user_name }}"
+    group: "{{ deploy_user_name }}"
+    mode: 0600
+    remote_src: yes
+  when: (deploy_user_authorized_keys.stat.exists == false)
