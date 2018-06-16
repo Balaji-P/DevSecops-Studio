@@ -27,5 +27,6 @@
     - common
     - geerlingguy.docker
     - prod
+    - geerlingguy.filebeat
   tags:
     - prod

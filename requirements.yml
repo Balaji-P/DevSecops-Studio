@@ -10,3 +10,4 @@
 - src: rvm_io.ruby
 - src: secfigo.terraform
 - src: secfigo.gauntlt
+- src: geerlingguy.filebeat
