@@ -12,7 +12,11 @@ filebeat_prospectors:
 
     paths:
       - "/var/log/syslog"
-    document_ytpe: syslog
+    document_type: syslog
+
+    paths:
+      - "/var/log/access.log"
+    document_type: weblog
       
 
 filebeat_output_elasticsearch_enabled: false
