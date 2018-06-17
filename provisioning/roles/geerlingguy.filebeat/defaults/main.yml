@@ -6,6 +6,15 @@ filebeat_prospectors:
     paths:
       - "/var/log/*.log"
 
+    paths:
+      - "/var/log/auth.log"
+    document_type: sshlog
+
+    paths:
+      - "/var/log/syslog"
+    document_ytpe: syslog
+      
+
 filebeat_output_elasticsearch_enabled: false
 filebeat_output_elasticsearch_hosts:
   - "10.0.1.18:9200"
