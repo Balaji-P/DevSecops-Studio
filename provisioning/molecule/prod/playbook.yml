@@ -85,5 +85,6 @@
     - geerlingguy.docker
     - prod
     - nginx
+    - geerlingguy.filebeat
   tags:
     - prod
