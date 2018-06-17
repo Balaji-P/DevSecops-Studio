@@ -23,10 +23,68 @@
     # see https://stackoverflow.com/questions/28327458/how-to-add-my-containers-hostname-to-etc-hosts
     add_host_entries: true
 
+    # Nginx settings for production
+    application_name: django.nv
+
+    ssl_crt: |
+      -----BEGIN CERTIFICATE-----
+      MIIDoDCCAogCCQD2Elel0cHa3jANBgkqhkiG9w0BAQsFADCBkTELMAkGA1UEBhMC
+      U0cxEjAQBgNVBAgMCVNpbmdhcG9yZTESMBAGA1UEBwwJU2luZ2Fwb3JlMREwDwYD
+      VQQKDAhUZWFjaGVyYTERMA8GA1UECwwIVHJhaW5pbmcxEzARBgNVBAMMCnByb2Qu
+      bG9jYWwxHzAdBgkqhkiG9w0BCQEWEGluZm9AdGVhY2hlcmEuaW8wHhcNMTgwNjE2
+      MDYxMTE3WhcNMjAwNzIwMDYxMTE3WjCBkTELMAkGA1UEBhMCU0cxEjAQBgNVBAgM
+      CVNpbmdhcG9yZTESMBAGA1UEBwwJU2luZ2Fwb3JlMREwDwYDVQQKDAhUZWFjaGVy
+      YTERMA8GA1UECwwIVHJhaW5pbmcxEzARBgNVBAMMCnByb2QubG9jYWwxHzAdBgkq
+      hkiG9w0BCQEWEGluZm9AdGVhY2hlcmEuaW8wggEiMA0GCSqGSIb3DQEBAQUAA4IB
+      DwAwggEKAoIBAQCqnU+bfJ+r32FzNKVfQDu0NcwRlXWXddKANRh20HVtIxthYw7S
+      D44aksP6HiyFPmEaql8j3NulvmQkxVWgU9pZn8U97BeN8i0S1zppvRGacC1AWNH0
+      maGm/3dw4sUYl4loPobXzkt0HGktlK2EJ72hn8RVbpOT5gdk5NgY1lY+ygSnc4/f
+      IY1pPI3pKzwQTlj4ybqZI1wP5+NxQDTxUOGWaCyzeeMh8eBzIJNqmk2DXM45HAoq
+      IuwjGF3ja2PMPq5oqBHfXM5qOsL/WkMcgPxqetw4FykBubjUvekOLEPr0J3azCb3
+      PtFBvDOnPJT90ikYbAMLXGiqc6zrjS+47205AgMBAAEwDQYJKoZIhvcNAQELBQAD
+      ggEBAGP0+HQqBj4mO0hljg9S01IpRGDOkY6Tl4IXOQbEXWkdDIVO+MloDLeYO/au
+      mm3JxZr3IyTah3xcefy8FK76rcRM//GFpGGXrpoAHJEeggqHU52o6AuDslYYF5zQ
+      YzOHn8em19MfYuKXxAbT1BbpG2uMC12rILAVSy8qthXVYfnPZRA5sjK6eWtvPSlL
+      l3KT6KHXJ2ux9x3ji+vS1Nqo9znbGDhyXCsYJsENINuZyyFMG8jR54zGFIObSyMi
+      Us1TFAtq95nuJgbRwlAzNg07OAIxiuoS1DIvttwK76iuOAViU96iEQdMPRrux82M
+      GDIDtJY0CwokI1MK5k19llGrXJc=
+      -----END CERTIFICATE-----
+
+    ssl_key: |
+      -----BEGIN PRIVATE KEY-----
+      MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCqnU+bfJ+r32Fz
+      NKVfQDu0NcwRlXWXddKANRh20HVtIxthYw7SD44aksP6HiyFPmEaql8j3NulvmQk
+      xVWgU9pZn8U97BeN8i0S1zppvRGacC1AWNH0maGm/3dw4sUYl4loPobXzkt0HGkt
+      lK2EJ72hn8RVbpOT5gdk5NgY1lY+ygSnc4/fIY1pPI3pKzwQTlj4ybqZI1wP5+Nx
+      QDTxUOGWaCyzeeMh8eBzIJNqmk2DXM45HAoqIuwjGF3ja2PMPq5oqBHfXM5qOsL/
+      WkMcgPxqetw4FykBubjUvekOLEPr0J3azCb3PtFBvDOnPJT90ikYbAMLXGiqc6zr
+      jS+47205AgMBAAECggEBAIx7yY/i9uqjnW8qGz0p+78wSN71rQTQvEpa7dDvZrE9
+      pg7zbMGkk0LoNDxf2hLAwV4eiQZTlfyMn5LzdcT1JqaDevq4ytBTZ6/KzstAJh1/
+      XpNMT1zTn5qNYgDuiJHuPPM8APXzZIev2R7x/EoEGw3ZKuWZjiTK1K3MDO+ulQdP
+      IoTpFySjAVKcOckiBvdeL3L+flDQEfb7DR+94jOQtZpa03bog4WDRxgn0EG1sxQ6
+      E1MFjm8GaHj+wakhkPa5aW6Ygw194Inij39n5eJoLeqQXLyvfZzoCTLSf4wfTG3D
+      XLWYSWO8HosQqv2of8TvE4S/+3UftpMplOEObs64gc0CgYEA0syAAuPP4SOhvNyI
+      jpSO8WLkR14UrXZCcBCltVmPF4fJqsVgQ1kpQ/S6CKxZmZ+novkqOTgdKV01ChL0
+      +Sm0GM1kCW8MmN4uitG8V/PLwah3pwpuvjhqc1nID/aru3hEqmazsHvM3HtFPOCf
+      /0WtuIa1+tLtb+XP7jI0Y8zEivsCgYEAzzLzE3htR0YuUJ0Tn0S9iU9JeJD0ePgY
+      JoG3bqoDJX4TxAA7Usx3RwYhnorH2ISoBoV2rwmO5dRFTBUGwbu02Q55Tg6JBed/
+      R0TcTPqKAp5iQvuvABjMATIrg9lMspKtgMSI4Zn3L2GziiuK4NQwhnfgrfrQHuHG
+      x3lBChA3MlsCgYAcohaJTfSAulxP0QzjgR5hf3NOlmLspPGlUz2PAplDMvibr6/B
+      tiy6xFU4tGB/U4ZrxriLiSm84qI/ug94gMerzspV1bW6VgOwa4jP0ZfNuFp4YBxm
+      zjb3cCySrojpMA7zrnud71MGZ+Ahwsk43XgZZoL1jQ0fc/Hogv1GyRuxXQKBgCSA
+      DDQc3dtVcKlA0okXGfCLaBz2JCr/QXnfFgpHpuA+8opvpAO1AzoeyWNdfVEWJWdo
+      sXyqSWMRXtfFSHhucbBfDV2Dz/2bR1+tsMVayV8muZalMbHprF51kRbb+9flYO0z
+      Mg3UCqhtJKytePycRKQbkBf1/B3EljjjkmKMcrzLAoGAc8/WYSm0sFIn3OwBHmUA
+      MJJoTQHElB7/42bn+wMe7VcJJc0J08/MsDhQtAmYlI+69qFd5dPjFH2skbO7LXX0
+      lapLAVPKlPU1h7QnR47zpwAsMyLpvmkOeULtrX9toFZFrY/YWwfKmovV8vBuEs8u
+      9RZk/JCjyS+3CgUm4Jab+ZU=
+      -----END PRIVATE KEY-----
+
   roles:
     - common
     - geerlingguy.docker
     - prod
     - geerlingguy.filebeat
+    - nginx
   tags:
     - prod

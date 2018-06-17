@@ -9,7 +9,7 @@
   vars:
     ansible_user: 'vagrant'
     # Docker Community Edition
-    docker_edition: 'ce'
+    docker_edition: "ce"
     docker_package: "docker-{{ docker_edition }}"
     docker_package_state: "present"
 
