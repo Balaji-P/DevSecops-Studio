@@ -1,4 +1,4 @@
-Welcome to DevSecOps Studio Project!
+Welcome to DevSecOps Studio Project
 ===================
 
 [![Build Status](https://travis-ci.org/teacheraio/DevSecOps-Studio.svg?branch=master)](https://travis-ci.org/teacheraio/DevSecOps-Studio)
