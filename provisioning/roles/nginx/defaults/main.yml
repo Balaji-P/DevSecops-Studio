@@ -1,6 +1,6 @@
 ---
 
-nginx_server_name: "{{ inventory_hostname }}"
+nginx_server_name: "10.0.1.22"
 nginx_ssl_dest_dir: /etc/ssl
 nginx_strong_dh_group: yes  # Strongly recomended in production. See weakdh.org.
 nginx_use_letsencrypt: no
