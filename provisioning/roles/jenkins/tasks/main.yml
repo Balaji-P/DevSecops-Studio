@@ -2,7 +2,7 @@
 
 - name: Setup docker with self signed ssl
   include_tasks: docker.yml
-  when: docker_package_state == present
+  when: docker_package_state == "present"
 
 - name: Add gitlab self signed ssl to trust store
   include_tasks: custom-certs.yml

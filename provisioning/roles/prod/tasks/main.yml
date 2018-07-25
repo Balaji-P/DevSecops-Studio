@@ -5,5 +5,4 @@
 
 - name: Setup docker with self signed ssl
   include_tasks: docker.yml
-  when: docker_package_state == present
-
+  when: docker_package_state == "present"
